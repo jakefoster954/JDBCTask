@@ -1,9 +1,10 @@
 package Menu;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class SalesTeamMenu {
-    public void displaySalesTeamMenu() {
+    public void displaySalesTeamMenu() throws IOException {
     MainMenu mainMenu = new MainMenu();
         System.out.println("---You have selected Sales Team Menu! Type the appropriate number---");
         System.out.println("1) Employee which has the highest total sales for this period");

@@ -1,12 +1,14 @@
 package Menu;
 
+import java.io.IOException;
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class HRMenu {
 
-    public void displayHRMenu() {
+    public void displayHRMenu() throws IOException {
         MainMenu mainMenu = new MainMenu();
-        System.out.println("---You have selected HR Menu! Type the appropriate number---");
+        System.out.println("---You have selected Menu.HR Menu! Type the appropriate number---");
         System.out.println("1) Add new Employee");
         System.out.println("2) Generate Report");
         System.out.println("3) Add Sales Employee");
@@ -14,6 +16,8 @@ public class HRMenu {
 
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
+        Connection c = ConnectionToDb.getConnection();
+         HR hr = new HR(c);
 
         switch (userInput) {
             case "1" :

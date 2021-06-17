@@ -10,5 +10,8 @@
         <module name="JDBCTask" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JDBCTask" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>
