@@ -20,4 +20,68 @@ public class Employee {
         this.sortCode = sortCode;
         this.salary = salary;
     }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getNationalInsurance() {
+        return nationalInsurance;
+    }
+
+    public String getBankAccountNumber() {
+        return bankAccountNumber;
+    }
+
+    public String getSortCode() {
+        return sortCode;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setNationalInsurance(String nationalInsurance) {
+        this.nationalInsurance = nationalInsurance;
+    }
+
+    public void setBankAccountNumber(String bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
+    }
+
+    public void setSortCode(String sortCode) {
+        this.sortCode = sortCode;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 }

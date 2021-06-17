@@ -9,4 +9,20 @@ public class SalesEmployee extends Employee{
         this.commissionRate = commissionRate;
         this.totalSales = totalSales;
     }
+
+    public double getCommissionRate() {
+        return commissionRate;
+    }
+
+    public int getTotalSales() {
+        return totalSales;
+    }
+
+    public void setCommissionRate(double commissionRate) {
+        this.commissionRate = commissionRate;
+    }
+
+    public void setTotalSales(int totalSales) {
+        this.totalSales = totalSales;
+    }
 }
