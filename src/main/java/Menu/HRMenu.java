@@ -33,7 +33,17 @@ public class HRMenu {
                 break;
             case "2" :
                 System.out.println("You have picked generate Report!");
-                hr.getEmployeeReport(1);
+                System.out.println("1) For Sales Employee");
+                System.out.println("2) For Technical Employee");
+                System.out.println("Any other) For Back");
+                String userInputForGenerateReport = scanner.nextLine();
+                if (userInputForGenerateReport.equals("1")) {
+                    hr.getEmployeeReport(1);
+                } else if (userInputForGenerateReport.equals("2")){
+                    hr.getEmployeeReport(2);
+                } else {
+                    displayHRMenu();
+                }
                 break;
             case "3" :
                 System.out.println("You have picked sales Employee!");
