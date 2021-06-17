@@ -1,10 +1,12 @@
 package Menu;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class TalentManagerMenu {
 
-    public void displayTalentTeamMenu() {
+    public void displayTalentTeamMenu() throws IOException, SQLException {
         MainMenu mainMenu = new MainMenu();
         System.out.println("---You have selected Talent Manager Menu! Type the appropriate number---");
         System.out.println("1)Create Project!");

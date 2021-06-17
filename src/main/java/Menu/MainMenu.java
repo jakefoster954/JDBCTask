@@ -1,17 +1,19 @@
 package Menu;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MainMenu {
 
-    public void displayMainMenu() {
+    public void displayMainMenu() throws IOException, SQLException {
         HRMenu hrMenu = new HRMenu();
         SalesTeamMenu salesTeamMenu = new SalesTeamMenu();
         FinanceTeamMenu financeTeamMenu = new FinanceTeamMenu();
         TalentManagerMenu talentManagerMenu = new TalentManagerMenu();
 
         System.out.println("---Welcome please select what type of employee you are? Type the appropriate number---");
-        System.out.println("1) HR Employee");
+        System.out.println("1) Menu.HR Employee");
         System.out.println("2) Finance Team");
         System.out.println("3) Sales Team");
         System.out.println("4) Talent Manager");
@@ -22,7 +24,7 @@ public class MainMenu {
 
         switch (userInput) {
             case "1" :
-                System.out.println("You have picked HR Employee!");
+                System.out.println("You have picked Menu.HR Employee!");
                 hrMenu.displayHRMenu();
                 break;
             case "2" :
@@ -44,10 +46,5 @@ public class MainMenu {
             default:
                 System.out.println("Invalid Type");
         }
-
-        System.out.println(userInput);
-
-
-
     }
 }
