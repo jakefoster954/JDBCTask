@@ -1,5 +1,7 @@
 package Menu;
 
+import Employee.SalesEmployee;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,8 +22,13 @@ public class HRMenu {
         Connection c = ConnectionToDb.getConnection();
          HR hr = new HR(c);
 
+
         switch (userInput) {
             case "1" :
+                SalesEmployee se = new SalesEmployee(1, "Joe", "Smith",
+                        "Rajska 15, Gdansk", "748932", "7483924", "748322",
+                        20_00_00, 0.30, 10_000_00);
+                hr.addSalesEmployee(se);
                 System.out.println("You have picked add new Employee!");
                 break;
             case "2" :

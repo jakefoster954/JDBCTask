@@ -1,11 +1,18 @@
 package Menu;
 
+
+import Employee.Employee;
+import Employee.SalesEmployee;
+
 import Employee.EmployeesPerDepartment;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
+import java.util.List;
 
 public class HR extends User {
     public HR(Connection c) {
@@ -32,7 +39,14 @@ public class HR extends User {
         return getEmployeeReport(emp);
     }
 
-    public String addSalesEmployee() {
+    public String addSalesEmployee(SalesEmployee obj) throws SQLException {
+        Statement st = c.createStatement();
+        st.executeUpdate(String.format("INSERT into Employee (EmployeeID, Fname, Lname, Address, NIN, SortCode, BankAccount) VALUES (%d, %s, %s, %s, %s, %s, %s)",
+                obj.getEmployeeId(), obj.getFirstName(), obj.getLastName(), obj.getAddress(), obj.getNationalInsurance(), obj.getSortCode(),
+                obj.getBankAccountNumber()));
+        st.executeUpdate(String.format("INSERT into SalesEmployee (EmployeeID, CommissionRate, TotalSales) " +
+                "VALUES (%d, %2.2f, %d)", obj.getEmployeeId(), obj.getCommissionRate(), obj.getTotalSales()));
+        System.out.println("Employee added successfully");
         return null;
     }
 }
