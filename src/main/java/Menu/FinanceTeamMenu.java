@@ -1,10 +1,11 @@
 package Menu;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class FinanceTeamMenu {
-    public void displayFinanceMenu() throws IOException {
+    public void displayFinanceMenu() throws IOException, SQLException {
         MainMenu mainMenu = new MainMenu();
         System.out.println("---You have selected Finance Menu! Type the appropriate number---");
         System.out.println("1) Generate employee gross pay");

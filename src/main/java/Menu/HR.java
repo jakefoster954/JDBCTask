@@ -12,9 +12,9 @@ public class HR extends User {
 
     public String getEmployeeReport(int EmployeeID) throws SQLException {
         Statement st = c.createStatement();
-//        ResultSet rs = st.executeQuery("SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) " +
-//                "AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM SalesEmployee)");
-        ResultSet rs = st.executeQuery("select * from Employee");
+        ResultSet rs = st.executeQuery("SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) " +
+                "AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM SalesEmployee)");
+//        ResultSet rs = st.executeQuery("select * from Employee");
         while (rs.next()) {
             int a =  rs.getInt("EmployeeID");
             System.out.println(a);

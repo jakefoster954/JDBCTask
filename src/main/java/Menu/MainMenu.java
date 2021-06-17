@@ -1,11 +1,12 @@
 package Menu;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MainMenu {
 
-    public void displayMainMenu() throws IOException {
+    public void displayMainMenu() throws IOException, SQLException {
         HRMenu hrMenu = new HRMenu();
         SalesTeamMenu salesTeamMenu = new SalesTeamMenu();
         FinanceTeamMenu financeTeamMenu = new FinanceTeamMenu();
@@ -45,10 +46,5 @@ public class MainMenu {
             default:
                 System.out.println("Invalid Type");
         }
-
-        System.out.println(userInput);
-
-
-
     }
 }
