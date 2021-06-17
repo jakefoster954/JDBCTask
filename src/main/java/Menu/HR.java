@@ -1,5 +1,7 @@
 package Menu;
 
+import Employee.EmployeesPerDepartment;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,8 +18,11 @@ public class HR extends User {
                 "AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM SalesEmployee)");
 //        ResultSet rs = st.executeQuery("select * from Employee");
         while (rs.next()) {
-            int a =  rs.getInt("EmployeeID");
-            System.out.println(a);
+            int employeeId =  rs.getInt("EmployeeID");
+            String employeeName =  rs.getString("Name");
+
+            EmployeesPerDepartment employees = new EmployeesPerDepartment(employeeId,employeeName);
+            employees.printEmployeePerDepartment();
         }
         return null;
     }
