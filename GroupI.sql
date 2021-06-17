@@ -69,6 +69,9 @@ INSERT INTO Project (ProjectName, StartDate, EndDate)
 INSERT INTO Project (ProjectName, StartDate, EndDate)
 	VALUES ('Make Database', 2021-05-16, 2021-05-25);
 
+INSERT INTO Project (ProjectName, StartDate, EndDate)
+	VALUES ('Edit Software', 2021-06-01, 2021-06-07);
+
 INSERT INTO TechnicalEmployee_Project (EmployeeID, ProjectID)
 	VALUES (1,2);
 
@@ -81,9 +84,17 @@ INSERT INTO TechnicalEmployee_Project (EmployeeID, ProjectID)
 INSERT INTO TechnicalEmployee_Project (EmployeeID, ProjectID)
 	VALUES (4,1);
 
-SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee JOIN SalesEmployee ON (Employee.EmployeeID = SalesEmployee.EmployeeID);
+SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM SalesEmployee);
 
-SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee JOIN TechnicalEmployee ON (Employee.EmployeeID = TechnicalEmployee.EmployeeID);
+SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM TechnicalEmployee);
 
-SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee JOIN SalesEmployee ON (MAX(TotalSales));
-	
+SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee WHERE MAX(TotalSales) FROM SalesEmployee;
+
+SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee WHERE Employee.EmployeeID IN (SELECT EmployeeID FROM TechnicalEmployee_Project);
+
+SELECT Employee.EmployeeID, CONCAT(Fname, ' ', Lname) AS Name FROM Employee WHERE Employee.EmployeeID NOT IN (SELECT EmployeeID FROM TechnicalEmployee_Project);
+
+SELECT ProjectID, ProjectName AS Project Name, StartDate, EndDate FROM Project WHERE Project.ProjectID NOT IN (SELECT ProjectID FROM TechnicalEmployee_Project);
+
+SELECT TechnicalEmployee_Project.ProjectID AS Project ID, COUNT(TechnicalEmployee_Project.ProjectID) AS Number of Employees FROM TechnicalEmployee_Project;
+
